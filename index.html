@@ -117,6 +117,16 @@
 			shadowWrapper.height = window.innerHeight;
 		}, false);
 		
+		// Listen for orientation changes
+    window.addEventListener("orientationchange", function() {
+			canvas = document.getElementById("canvas");  
+			ctx = canvas.getContext("2d");
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			shadowWrapper.width = window.innerWidth;
+			shadowWrapper.height = window.innerHeight;
+}, false);
+		
 		
 		
 		
