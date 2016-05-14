@@ -100,6 +100,11 @@
 			}
 			_points = [];
 			ctx.clearRect(0,0,canvas.width,canvas.height);
+			
+			 if (result.Name == "circle") {
+        //ctx.fillText("Circle of Death",oldX,oldY);
+        fadeOut("Circle of Death", canvas.width/2, canvas.height/2);
+      }
 		}, false);
 		
 		window.addEventListener("load", function(e) {
