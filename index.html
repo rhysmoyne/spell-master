@@ -48,6 +48,7 @@
             canvas.width = canvas.width; // Clears the canvas
             ctx.fillStyle = "rgba(124, 145, 158, " + alpha + ")";
             ctx.font = "italic 20pt Arial";
+            ctx.textAlign = "center";
             ctx.fillText(text, posX, posY);
             alpha = alpha - 0.05; // decrease opacity (fade out)
             if (alpha < 0) {
