@@ -42,6 +42,21 @@
 		var isMouseDown = false; // mouse only bool
 		var threshold = 3; // number of pixels required to be moved for a movement to count
 		
+	  function fadeOut(text, posX, posY) {
+        var alpha = 1.0,   // full opacity
+        interval = setInterval(function () {
+            canvas.width = canvas.width; // Clears the canvas
+            ctx.fillStyle = "rgba(124, 145, 158, " + alpha + ")";
+            ctx.font = "italic 20pt Arial";
+            ctx.fillText(text, posX, posY);
+            alpha = alpha - 0.05; // decrease opacity (fade out)
+            if (alpha < 0) {
+                canvas.width = canvas.width;
+                clearInterval(interval);
+            }
+        }, 50); 
+    }
+	
 	
 		document.addEventListener('touchstart', function(e) {
 			e.preventDefault();
@@ -148,7 +163,11 @@
 			
       ctx.font = "30px Arial";
       ctx.fillStyle = "#7c919e";
-      ctx.fillText("Hello World",oldX,oldY);
+
+      if (result.Name == "circle") {
+        //ctx.fillText("Circle of Death",oldX,oldY);
+        fadeOut("Circle of Death", canvas.width/2, canvas.height/2);
+      }
 		}, false);
 		
 	</script>
